@@ -9,10 +9,7 @@ dataset = 'smc'
 feats = 'dma'
 
 # CFs = ['SVC', 'RFC', 'LR-lasso', 'LR-ridge', 'gaussNB', 'MLP', "GB"]
-
 CFs = ['SVC', 'RFC', 'LR-ridge', 'MLP']
-
-# fig, axes = plt.subplots(1, 3, figsize=(15, 8))
 
 group = ['NC', 'MCI', 'NC+MCI']
 
@@ -54,37 +51,4 @@ p = sns.catplot(
 p.tight_layout()
 p.savefig('../results/smc_dma_perf.png')
 
-######################################################
-#feat = pd.concat([demo, mri], axis=1)
-#feat = feat.drop(['APOEe4'], axis=1)
-#feat = (feat - feat.min()) / (feat.max() - feat.min())
 
-#X = feat.to_numpy()
-# X = scaler.fit_transform(np.c_[emb, features_map]) # transform to array
-# X = scaler.fit_transform(features_map) # transform to array
-# X = scaler.fit_transform(emb[~allzeros])
-#y = labels
-# y = labels[~allzeros]
-
-
-
-
-
-# plot embedding
-#import numpy as np
-
-#emb = np.loadtxt('../data/adni/emb_corr_coef/n2v_1_1.emb', delimiter=' ', skiprows=1)
-#nodes = np.array(emb[:,0], dtype=np.int32)
-#emb = np.delete(emb, 0, axis=1)
-
-#emb.shape
-
-#idx_map = {j:i for i, j in enumerate(idx)}
-#labels_map = labels[np.array(list(map(idx_map.get, nodes)), dtype=np.int32)]
-
-#plot_embedding(emb, labels_map, 30)
-
-#features_map = features.numpy()
-#features_map = features_map[np.array(list(map(idx_map.get, nodes)), dtype=np.int32),:]
-
-#plot_embedding(np.c_[emb, features_map], labels_map, 30)
